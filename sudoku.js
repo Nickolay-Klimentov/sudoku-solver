@@ -9,6 +9,7 @@ function getBoard(boardString) {
 }
 
 // функция проверки наличия пустых ячеек на поле
+// возаращает true или false
 function checkEmpty(board) {
   for (let i = 0; i < 9; i += 1) {
     for (let j = 0; j < 9; j += 1) {
@@ -21,6 +22,7 @@ function checkEmpty(board) {
 }
 
 // функция проверяющая возможные решения
+// возвращает массив с возможными для решения цифрами
 function checkSolve(position, board) {
   const [i, j] = position;
   const numbers = {
@@ -65,6 +67,9 @@ function checkSolve(position, board) {
 }
 
 // функция решающая судоку
+// пока решает только первые 5 досок
+// вопрос зацикленности все еще открыт
+// не понимаю как перебирать варинты решения
 function getSolve(board) {
   for (let i = 0; i < board.length; i += 1) {
     for (let j = 0; j < board.length; j += 1) {
